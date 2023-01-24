@@ -36,39 +36,49 @@ for ($month = 1; $month <= 12; $month++) {
 <html>
     <head>
         <title>2023 Calendar &raquo; ohchiko</title>
+
+        <link rel="stylesheet" type="text/css" href="style.css" />
     </head>
     <body>
         <?php
         foreach ($period as $month => $weeks) {
         ?>
-            <h3><?php echo $month; ?></h3>
-        <table>
-            <thead>
-                <tr>
-                    <th>Sunday</th>
-                    <th>Monday</th>
-                    <th>Tuesday</th>
-                    <th>Wednesday</th>
-                    <th>Thursday</th>
-                    <th>Friday</th>
-                    <th>Saturday</th>
-                </tr>
-            </thead>
+            <div style="page-break-after: always; display: flex; flex-direction: column; max-height: 148mm; padding: 2rem;">
+                <div style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 1rem;">
+                    <figure>
+                        <q>Sometimes, there is some times.</q>
+                        <figcaption>Somebody, at time.</figcaption>
+                    </figure>
+                    <h1><?php echo $month; ?></h1>
+                </div>
+                <div class="table">
+                    <div class="thead">
+                        <div class="tr">
+                            <div class="th">Sunday</div>
+                            <div class="th">Monday</div>
+                            <div class="th">Tuesday</div>
+                            <div class="th">Wednesday</div>
+                            <div class="th">Thursday</div>
+                            <div class="th">Friday</div>
+                            <div class="th">Saturday</div>
+                        </div>
+                    </div>
 
-            <tbody>
-                <?php
-                foreach ($weeks as $days) {
-                    echo '<tr>';
+                    <div class="tbody">
+                        <?php
+                        foreach ($weeks as $days) {
+                            echo '<div class="tr">';
 
-                    foreach ($days as $day) {
-                        echo '<td>' . $day . '</td>';
-                    }
+                            foreach ($days as $day) {
+                                echo '<div class="td">' . $day . '</div>';
+                            }
 
-                    echo '</tr>';
-                }
-                ?>
-            </tbody>
-        </table>
+                            echo '</div>';
+                        }
+                        ?>
+                    </div>
+                </div>
+            </div>
         <?php
         }
         ?>

@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins&display=swap');
+
+@page {
+    size: 210mm 148mm landscape;
+    margin: 0;
+}
+
+html {
+    font-family: 'Poppins', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3rem;
+    text-align: right;
+}
+
+.thead {
+    width: 100%;
+}
+
+.thead > .tr {
+    text-transform: uppercase;
+}
+
+.tr {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    width: 100%;
+}
+
+.tbody > .tr {
+    border-top: 1px solid;
+    border-right: 1px solid;
+    border-left: 1px solid;
+}
+
+.tbody > .tr > .td + .td {
+    border-top-width: 0px;
+    border-right-width: 0px;
+    border-bottom-width: 0px;
+    border-left-width: 1px;
+}
+
+.tbody > .tr > .td:first-child {
+    border-top-width: 0px;
+    border-right-width: 0px;
+    border-bottom-width: 0px;
+    border-left-width: 0px;
+}
+
+.tbody > .tr:last-child > .td:last-child {
+    border-top-width: 0px;
+    border-right-width: 1px;
+    border-bottom-width: 0px;
+    border-left-width: 1px;
+}
+
+.th {
+    font-size: .9rem;
+    padding: .25rem 0;
+    text-align: center;
+}
+
+.td {
+    width: 100%;
+    padding: .5rem .5rem 2.5rem;
+    font-size: smaller;
+    text-align: right;
+}
+
+.tbody .td {
+    border: 1px solid;
+}
+
+q + figcaption {
+    font-size: small;
+    font-style: italic;
+    text-align: right;
+}
+
+q + figcaption::before {
+    content: "\0336";
+    padding: 0 .25rem;
+}
